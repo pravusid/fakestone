@@ -48,8 +48,8 @@ public class FakeStoneApp {
         System.out.println("==========\n사전 설정이 끝났습니다." +
                 "\n게임을 시작하겠습니다\n시작순서는 임의로 결정됩니다\n==========");
         // 게임을 시작하기 위해서 가상의 결투장(게임진행자) 생성
-        BattleField referee = new BattleField(players, decks);
-        Player winner = referee.startGame();
+        BattleField field = new BattleField(players, decks);
+        Player winner = field.startGame();
         // 게임이 끝나면 승리자를 받아서 출력한다
         gameOver(winner);
     }

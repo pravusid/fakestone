@@ -15,9 +15,8 @@ public class Referee {
 
     public void useCardsInField(List<Player> players, Player player) {
         LinkedList<Card> cards = validOnCards(field.getActiveCards(player));
-        if (!IOManager.listAvailability(cards)) {
-            return;
-        }
+        if (!IOManager.listAvailability(cards)) { return; }
+
         System.out.println("===== 사용할 카드를 선택하세요 =====");
         IOManager.printList(cards);
         int input = IOManager.scanNumber(cards.size());

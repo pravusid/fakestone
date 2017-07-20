@@ -58,14 +58,10 @@ public class BattleField {
                     manageTurn(player);
                 }
                 prepareNextTurn();
-                if (turn > Rule.TURN_LIMIT) {
-                    break;
-                }
+                if (turn > Rule.TURN_LIMIT) { break; }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
-                if (winner != null) {
-                    break;
-                }
+                if (winner != null) { break; }
             }
         }
         return winner;
@@ -102,9 +98,7 @@ public class BattleField {
             System.out.println("===== " + player + "님의 차례입니다 =====\n"
                     + "1.카드(핸드) 2.카드(필드) 3.영웅능력 4.턴 종료");
             int input = IOManager.scanNumber(4);
-            if (input == 3) {
-                break;
-            }
+            if (input == 3) { break; }
             switch (input) {
                 case 0:
                     player.useCardsInHand(this);
@@ -129,14 +123,12 @@ public class BattleField {
             decks.get(i).drawCard(players.get(i));
         }
         // 카드 나이를 증가시킨다
-        activeCards.stream().forEach(l -> l.stream().forEach(c -> c.nextTurn()));
+        activeCards.forEach(l -> l.forEach(c -> c.nextTurn()));
     }
 
     public LinkedList<Card> getActiveCards(Player player) {
         for (int i = 0; i < players.size(); i++) {
-            if (players.get(i) == player) {
-                return activeCards.get(i);
-            }
+            if (players.get(i) == player) { return activeCards.get(i); }
         }
         return null;
     }
@@ -153,9 +145,7 @@ public class BattleField {
         // TODO : 스트림 사용시 객체 자체가 삭제되는 문제 (다시 중첩반복문 적용)
         for (List<Card> list : activeCards) {
             for (Card c : list) {
-                if (c == card) {
-                    list.remove(c);
-                }
+                if (c == card) { list.remove(c); }
             }
         }
     }
