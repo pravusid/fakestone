@@ -4,8 +4,8 @@ import me.idpravus.data.GameObjectType;
 
 public interface GameObject {
 
-	public GameObjectType getType();
-	
+    public GameObjectType getType();
+
     public String getName();
 
     public int getCost();

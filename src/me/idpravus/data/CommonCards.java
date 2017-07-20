@@ -5,14 +5,14 @@ import me.idpravus.domain.Player;
 import me.idpravus.domain.Referee;
 
 public enum CommonCards implements AbstractCard {
-	// 카드 개별 특수능력 구현 예시
-	// 특수능력은 중복되는 부분이 있으므로 한 곳에 모아서 구현, 여기에서는 호출만
+    // 카드 개별 특수능력 구현 예시
+    // 특수능력은 중복되는 부분이 있으므로 한 곳에 모아서 구현, 여기에서는 호출만
     Stonetusk_Boar(GameObjectType.MINION, "돌엄니 멧돼지", 1, 1, 1) {
-    	@Override
-    	public boolean cardPower(Player player, Referee referee) {
-    		System.out.println("돌엄니 멧돼지 특수능력");
-    		return true;
-    	}
+        @Override
+        public boolean cardPower(Player player, Referee referee) {
+            System.out.println("돌엄니 멧돼지 특수능력");
+            return true;
+        }
     },
     Murloc_Raider(GameObjectType.MINION, "멀록 약탈꾼", 1, 2, 1),
     Voodoo_Doctor(GameObjectType.MINION, "부두교 의술사 ", 1, 2, 1),
@@ -58,7 +58,7 @@ public enum CommonCards implements AbstractCard {
     Core_Hound(GameObjectType.MINION, "심장부 사냥개", 7, 9, 5),
     War_Golem(GameObjectType.MINION, "전쟁 골렘", 7, 7, 7);
 
-	private GameObjectType type;
+    private GameObjectType type;
     private String name;
     private int cost;
     private int atk;
@@ -66,7 +66,7 @@ public enum CommonCards implements AbstractCard {
 
     CommonCards(GameObjectType type, String name, int cost, int atk, int def) {
         this.type = type;
-    	this.name = name;
+        this.name = name;
         this.cost = cost;
         this.atk = atk;
         this.def = def;
@@ -74,9 +74,9 @@ public enum CommonCards implements AbstractCard {
 
     @Override
     public GameObjectType getType() {
-    	return type;
+        return type;
     }
-    
+
     @Override
     public String getName() {
         return name;
@@ -96,5 +96,5 @@ public enum CommonCards implements AbstractCard {
     public int getDef() {
         return def;
     }
-    
+
 }

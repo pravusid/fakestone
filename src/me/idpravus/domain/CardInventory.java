@@ -1,17 +1,17 @@
 package me.idpravus.domain;
 
-import me.idpravus.data.CommonCards;
 import me.idpravus.data.ClassCards;
+import me.idpravus.data.CommonCards;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 public class CardInventory {
     protected LinkedList<Card> cards;
 
-    protected CardInventory() { }
+    protected CardInventory() {
+    }
 
     // 인벤토리는 사용자마다 하나씩 주어지고, 생성과 동시에 모두 채워진다
     public CardInventory(AbstractHero hero) {
@@ -25,9 +25,9 @@ public class CardInventory {
         }
         // 선택한 직업카드만 생성한다
         new ArrayList<ClassCards>(Arrays.asList(ClassCards.values()))
-			        				.stream()
-			        				.filter(c -> c.getHero() == hero)
-			        				.forEach(c -> cards.add(createCard(c)));
+                .stream()
+                .filter(c -> c.getHero() == hero)
+                .forEach(c -> cards.add(createCard(c)));
     }
 
     // 카드 정보를 받아서 카드를 생성한다

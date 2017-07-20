@@ -8,5 +8,5 @@ public class Main {
         FakeStoneApp app = new FakeStoneApp();
         app.initializeGame();
     }
-    
+
 }
