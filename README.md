@@ -87,7 +87,7 @@ me.idpravus 패키지의 Main.java로 실행 가능합니다.
 게임에서 전장(Battle Field)과 심판을 제외한 다른 객체들은 최상위 인터페이스 GameObject를 구현합니다.  
 기본적으로 게임내에서 상호작용이 있고, 구현시 객체들간의 공/방 상황을 유연하게 처리하기 위함입니다.  
 또한 GameObject를 상속받은 AbstractHero와 AbstractCard는, Enum과 Class를 통해 구현됩니다.
-일례로, CommonCards(enum)과 Card(class)는 동시에 AbstractCard를 구현하는데 이를 통해 데이터(실체)와 객체(추상)가 논리적 동등성을 확보하게 됩니다.
+일례로, CommonCards(enum)과 Card(class)는 동시에 AbstractCard를 구현하는데 이를 통해 영웅 데이터(실체)와 객체를 추상화한 Class가 논리적 동등성을 확보하게 됩니다.
 
 #### 구상 클래스 상속
 
