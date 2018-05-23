@@ -24,8 +24,7 @@ public class CardInventory {
             cards.add(createCard(data));
         }
         // 선택한 직업카드만 생성한다
-        new ArrayList<ClassCards>(Arrays.asList(ClassCards.values()))
-                .stream()
+        Arrays.stream(ClassCards.values())
                 .filter(c -> c.getHero() == hero)
                 .forEach(c -> cards.add(createCard(c)));
     }
